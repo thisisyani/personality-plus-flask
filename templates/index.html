@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kuis 4 Temperamen Florence Littauer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Tes Kepribadian 4 Temperamen</h1>
+    <p class="subtitle">
+    Personality Plus • Florence Littauer
+    </p>
+
+    <form action="/kelebihan" method="POST">
+        <label for="nama_user">Masukkan Nama</label>
+        <input type="text" name="nama_user" required placeholder="Tulis nama lengkap kamu di sini">
+    <div class="intro">
+        <p>Pilih <b>satu kalimat</b> pada yang paling menggambarkan diri kamu.
+        Tidak ada jawaban benar atau salah. Jawablah sesuai diri kamu yang alami, bukan seperti yang kamu inginkan ✨ </p>
+    </div>
+    <div>
+    <p>Progress: Bagian 1 dari 2</p>
+    <div class="progress">
+        <div class="progress-bar" style="width:50%"></div>
+    </div>
+        
+        <h3>📝 BAGIAN I: KELEMAHAN</h3> 
+        <div class="question">
+            <div class="question-number">No. 1</div>
+            <label><input type="radio" name="l1" value="sanguinis" required> A. Suka pamer, memperlihatkan apa yang gemerlap dan kuat, terlalu bersuara.</label>
+            <label><input type="radio" name="l1" value="koleris"> B. Suka memerintah, mendominasi, kadang-kadang mengesalkan antar hubungan orang dewasa.</label>
+            <label><input type="radio" name="l1" value="melankolis"> C. Menghindari perhatian akibat rasa malu.</label>
+            <label><input type="radio" name="l1" value="plegmatis"> D. Memperlihatkan sedikit emosi/mimik.</label>
+
+            <div class="question-number">No. 2</div>
+            <label><input type="radio" name="l2" value="sanguinis" required> A. Kurang teraturannya mempengaruhi hampir semua bidang kehidupannya.</label>
+            <label><input type="radio" name="l2" value="koleris"> B. Merasa sulit mengenali masalah dan perasaan orang lain.</label>
+            <label><input type="radio" name="l2" value="melankolis"> C. Sulit memaafkan dan melupakan sakit hati yang pernah dilakukan, biasa mendendam.</label>
+            <label><input type="radio" name="l2" value="plegmatis"> D. Cenderung tidak bergairah, sering merasa bahwa bagaimanapun sesuatu tidak akan berhasil.</label>          
+            
+            <div class="question-number">No. 3</div>
+            <label><input type="radio" name="l3" value="sanguinis" required> A. Suka menceritakan kembali suatu kisah tanpa menyadari bahwa cerita tersebut 
+            pernah diceritakan sebelumnya, selalu perlu sesuatu untuk dikatakan.</label>
+            <label><input type="radio" name="l3" value="koleris"> B. Berjuang, melawan untuk menerima cara lain yang tidak sesuai dengan cara yang diinginkan.</label>
+            <label><input type="radio" name="l3" value="melankolis"> C. Sering memendam rasa tidak senang akibat merasa tersinggung oleh sesuatu.</label>
+            <label><input type="radio" name="l3" value="plegmatis"> D. Tidak bersedia ikut terlibat terutama bila rumit.</label>        
+            
+            <div class="question-number">No. 4</div>
+            <label><input type="radio" name="l4" value="sanguinis" required> A. Punya ingatan kurang kuat, biasanya berkaitan dengan kurang disiplin dan tidak mau repot-repot mencatat hal-hal yang tidak menyenangkan.</label>
+            <label><input type="radio" name="l4" value="koleris"> B. Langsung, blak-blakan, tidak sungkan mengatakan apa yang dipikirkan.</label>
+            <label><input type="radio" name="l4" value="melankolis"> C. Bersikeras tentang persoalan sepele, minta perhatian besar pada persoalan yang tidak penting.</label>
+            <label><input type="radio" name="l4" value="plegmatis"> D. Sering merasa sangat khawatir, sedih, dan gelisah.</label>  
+
+            <div class="question-number">No. 5</div>
+            <label><input type="radio" name="l5" value="sanguinis" required> A. Lebih banyak bicara daripada mendengarkan, bila sudah bicara sulit berhenti.</label>
+            <label><input type="radio" name="l5" value="koleris"> B. Sulit bertahan untuk menghadapi kekesalan.</label>
+            <label><input type="radio" name="l5" value="melankolis"> C. Kurang percaya diri.</label>
+            <label><input type="radio" name="l5" value="plegmatis"> D. Sulit dalam membuat keputusan.</label>   
+
+            <div class="question-number">No. 6</div>
+            <label><input type="radio" name="l6" value="sanguinis" required> A. Bisa bergairah sesaat dan sedih pada saat berikutnya. Bersedia membantu kemudian menghilang. Berjanji akan datang tapi kemudian lupa untuk muncul.</label>
+            <label><input type="radio" name="l6" value="koleris"> B. Merasa sulit memperlihatkan kasih sayang dengan terbuka.</label>
+            <label><input type="radio" name="l6" value="melankolis"> C. Tuntutannya akan kesempurnaan terlalu tinggi dan dapat membuat orang lain menjauhinya.</label>
+            <label><input type="radio" name="l6" value="plegmatis"> D. Tidak tertarik pada perkumpulan atau kelompok.</label>  
+             
+            <div class="question-number">No. 7</div>
+            <label><input type="radio" name="l7" value="sanguinis" required> A. Tidak punya cara yang konsisten untuk melakukan banyak hal.</label>
+            <label><input type="radio" name="l7" value="koleris"> B. Bersikeras memaksakan caranya sendiri.</label>
+            <label><input type="radio" name="l7" value="melankolis"> C. Standar yang ditetapkan begitu tinggi sehingga orang lain sulit memuaskannya.</label>
+            <label><input type="radio" name="l7" value="plegmatis"> D. Lambat dalam bergerak dan sulit untuk ikut terlibat.</label>    
+            
+            <div class="question-number">No. 8</div>
+            <label><input type="radio" name="l8" value="sanguinis" required> A. Memperbolehkan orang lain, termasuk anak-anak untuk melakukan apa saja sesukanya untuk menghindari diri kita tidak disukai.</label>
+            <label><input type="radio" name="l8" value="koleris"> B. Punya harga diri tinggi dan menganggap diri selalu benar dan yang terbaik dalam pekerjaan.</label>
+            <label><input type="radio" name="l8" value="melankolis"> C. Dalam mengharapkan yang terbaik, biasanya melihat sisi buruk sesuatu terlebih dahulu.</label>
+            <label><input type="radio" name="l8" value="plegmatis"> D. Memiliki kepribadian yang biasa saja dan tidak suka memperlihatkan banyak emosi.</label>           
+            
+            <div class="question-number">No. 9</div>
+            <label><input type="radio" name="l9" value="sanguinis" required> A. Memiliki perangai seperti anak-anak yang mengutarakan diri dengan ngambek dan berbuat berlebihan tetapi kemudian melupakannya seketika.</label>
+            <label><input type="radio" name="l9" value="koleris"> B. Mengobarkan perdebatan karena biasanya selalu benar dan terkadang tidak peduli bagaimana situasi saat itu.</label>
+            <label><input type="radio" name="l9" value="melankolis"> C. Mudah merasa terasing dari orang lain dikarenakan rasa tidak aman atau takut jangan-jangan orang lain tidak merasa senang bersamanya.</label>
+            <label><input type="radio" name="l9" value="plegmatis"> D. Bukan orang yang suka menetapkan tujuan dan tidak berharap menjadi orang yang seperti itu.</label>
+            
+            <div class="question-number">No. 10</div>
+            <label><input type="radio" name="l10" value="sanguinis" required> A. Memiliki perspektif yang sederhana dan kekanak-kanakan, kurang pengertian terhadap tingkat kehidupan yang lebih mendalam.</label>
+            <label><input type="radio" name="l10" value="koleris"> B. Penuh keyakinan, semangat, dan keberanian (sering dalam pengertian negatif).</label>
+            <label><input type="radio" name="l10" value="melankolis"> C. Sikapnya jarang positif dan sering hanya melihat sisi buruk dari setiap situasi.</label>
+            <label><input type="radio" name="l10" value="plegmatis"> D. Mudah bergaul, tidak peduli, dan masa bodoh.</label>
+            
+            <div class="question-number">No. 11</div>
+            <label><input type="radio" name="l11" value="sanguinis" required> A. Merasa senang mendapat penghargaan dari orang lain. Sebagai penghibur menyukai tepuk tangan, tawa, dan penerimaan penonton.</label>
+            <label><input type="radio" name="l11" value="koleris"> B. Menetapkan tujuan secara agresif serta harus terus produktif, merasa bersalah bila beristirahat, bukan terdorong oleh keinginan untuk sempurna melainkan imbalan.</label >
+            <label><input type="radio" name="l11" value="melankolis"> C. Suka menarik diri dan memerlukan banyak waktu untuk sendirian atau mengasingkan diri.</label>
+            <label><input type="radio" name="l11" value="plegmatis"> D. Secara konsisten merasa terganggu atau resah.</label>
+            
+            <div class="question-number">No. 12</div>
+            <label><input type="radio" name="l12" value="sanguinis" required> A. Suka berbicara dan sulit mendengarkan.</label>
+            <label><input type="radio" name="l12" value="koleris"> B. Kadang-kadang menyatakan diri dengan cara yang agak menyinggung perasaan dan kurang pertimbangan.</label>
+            <label><input type="radio" name="l12" value="melankolis"> C. Terlalu introspektif dan mudah tersinggung kalau disalahpahami.</label>
+            <label><input type="radio" name="l12" value="plegmatis"> D. Lebih suka mundur dari situasi sulit.</label>
+            
+            <div class="question-number">No. 13</div>
+            <label><input type="radio" name="l13" value="sanguinis" required> A. Kurang memiliki kemampuan dalam membuat kehidupan menjadi teratur.</label>
+            <label><input type="radio" name="l13" value="koleris"> B. Dengan paksa mengambil kontrol atas situasi atau orang lain, biasanya dengan mengatakan apa yang harus dilakukan.</label>
+            <label><input type="radio" name="l13" value="melankolis"> C. Hampir sepanjang waktu merasa tertekan.</label>
+            <label><input type="radio" name="l13" value="plegmatis"> D. Mempunyai ciri khas selalu tidak tetap dan kurang keyakinan bahwa suatu hal akan berhasil.</label>   
+            
+            <div class="question-number">No. 14</div>
+            <label><input type="radio" name="l14" value="sanguinis" required> A. Tidak menentu, serba berlawanan dengan tindakan dan emosi yang tidak berdasarkan logika.</label>
+            <label><input type="radio" name="l14" value="koleris"> B. Tampaknya tidak bisa menerima sikap, pandangan, dan cara orang lain.</label>
+            <label><input type="radio" name="l14" value="melankolis"> C. Pemikiran dan perhatian ditujukan ke dalam, hidup di dalam diri sendiri.</label>
+            <label><input type="radio" name="l14" value="plegmatis"> D. Merasa bahwa kebanyakan hal tidak penting dalam suatu cara atau cara yang lain.</label>          
+            
+            <div class="question-number">No. 15</div>
+            <label><input type="radio" name="l15" value="sanguinis" required> A. Hidup dalam keadaan tidak teratur, tidak dapat menemukan banyak benda.</label>
+            <label><input type="radio" name="l15" value="koleris"> B. Mempengaruhi dengan cerdik dan penuh tipu untuk kepentingan sendiri; dengan suatu cara dapat memaksakan kehendak.</label>
+            <label><input type="radio" name="l15" value="melankolis"> C. Tidak punya emosi yang tinggi, tetapi biasanya semangatnya merosot sekali, apalagi bila merasa tidak dihargai.</label>
+            <label><input type="radio" name="l15" value="plegmatis"> D. Bicara pelan kalau didesak, tidak mau repot-repot bicara dengan jelas.</label>           
+            
+            <div class="question-number">No. 16</div>
+            <label><input type="radio" name="l16" value="sanguinis" required> A. Perlu menjadi pusat perhatian, ingin dilihat.</label>
+            <label><input type="radio" name="l16" value="koleris"> B. Bertekad memaksakan kehendaknya, tidak mudah dibujuk, keras kepala.</label>
+            <label><input type="radio" name="l16" value="melankolis"> C. Tidak mudah percaya, mempertanyakan motif di balik suatu perkataan.</label>
+            <label><input type="radio" name="l16" value="plegmatis"> D. Tidak sering bertindak atau berpikir cepat, sangat mengganggu.</label>           
+            
+            <div class="question-number">No. 17</div>
+            <label><input type="radio" name="l17" value="sanguinis" required> A. Tawa dan suaranya dapat didengar di atas suara lainnya di di dalam ruangan.</label>
+            <label><input type="radio" name="l17" value="koleris"> B. Tidak ragu-ragu mengatakan benar dan dapat memegang kendali.</label>
+            <label><input type="radio" name="l17" value="melankolis"> C. Memerlukan banyak waktu pribadi dan cenderung menghindari orang lain.</label>
+            <label><input type="radio" name="l17" value="plegmatis"> D. Menilai pekerjaan dan kegiatan dengan ukuran berapa banyak tenaga yang dibutuhkan.</label>
+            
+            <div class="question-number">No. 18</div>
+            <label><input type="radio" name="l18" value="sanguinis" required> A. Tidak punya kekuatan untuk berkonsentrasi atau menaruh perhatian pada sesuatu.</label>
+            <label><input type="radio" name="l18" value="koleris"> B. Punya kemarahan yang menuntut berdasarkan ketidaksabaran.</label>
+            <label><input type="radio" name="l18" value="melankolis"> C. Cenderung mencurigai atau tidak mempercayai gagasan orang lain.</label>
+            <label><input type="radio" name="l18" value="plegmatis"> D. Lambat untuk memulai, perlu dorongan yang kuat untuk termotivasi.</label>            
+            
+            <div class="question-number">No. 19</div>
+            <label><input type="radio" name="l19" value="sanguinis" required> A. Menyukai kegiatan baru terus-menerus karena tidak merasa senang melakukan hal yang sama sepanjang waktu.</label>
+            <label><input type="radio" name="l19" value="koleris"> B. Bisa bertindak tergesa-gesa tanpa memikirkan dengan tuntas terlebih dahulu, biasanya karena ketidaksabaran.</label>
+            <label><input type="radio" name="l19" value="melankolis"> C. Secara sadar maupun tidak mendendam, menghukum orang yang melanggar, diam-diam menahan persahabatan/kasih sayang.</label>
+            <label><input type="radio" name="l19" value="plegmatis"> D. Tidak bersedia untuk ikut terlibat dalam suatu hal.</label>            
+            
+            <div class="question-number">No. 20</div>
+            <label><input type="radio" name="l20" value="sanguinis" required> A. Rentang perhatian kekanak-kanakan dan pendek, butuh banyak perubahan dan variasi supaya tak merasa bosan.</label>
+            <label><input type="radio" name="l20" value="koleris"> B. Cerdik, orang yang selalu bisa menemukan cara untuk mencapai tujuan yang diinginkan.</label>
+            <label><input type="radio" name="l20" value="melankolis"> C. Selalu mengevaluasi dan membuat penilaian, sering memikirkan dan menyatakan reaksi negatif.</label>
+            <label><input type="radio" name="l20" value="plegmatis"> D. Sering mengendurkan pendiriannya, bahkan ketika merasa benar untuk menghindari terjadinya konflik.</label>
+
+            <button type="submit">Lanjut ke Bagian II →</button>
+        </div>
+    </form>    
+</body>
+</html>
+        

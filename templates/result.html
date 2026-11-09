@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Kepribadian Kamu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Halo {{ nama_user }}. Ini Hasil Tesmu!</h1>
+
+    <h2>Tipe Temperamen Dominan: <b>{{hasil}}</b></h2>
+    
+    <p>Rincian jumlah kecenderungan kata yang kamu pilih:</p>
+
+    <ul>
+        <li><span>🟡 Sanguinis:</span> <b>{{ detail_skor['sanguinis'] }}</b></li>
+        <li><span>🔴 Koleris:</span> <b>{{ detail_skor['koleris'] }}</b></li>
+        <li><span>🔵 Melankolis:</span> <b>{{ detail_skor['melankolis'] }}</b></li>
+        <li><span>🟢 Plegmatis:</span> <b>{{ detail_skor['plegmatis'] }}</b></li>
+    </ul>
+
+    <div class="description-box" style="margin-top: 25px; padding: 20px; background-color: #f0f4f8; border-radius: 12px; border-left: 5px solid #667eea; text-align: left;">
+        <h3 style="margin-top: 0; color: #030b13;">🧠 Tentang Dirimu:</h3>
+        <p class="deskripsi">{{ deskripsi }}</p>
+
+        <h3 style="margin-top: 0; color: #2b6cb0;">🌟 Kekuatan Karaktermu:</h3>
+        <p>{{ kekuatan }}</p>
+        
+        <h3 style="color: #c53030; margin-top: 20px;">🚨 Tantangan/Kelemahanmu:</h3>
+        <p>{{ tantangan }}</p>
+    </div>
+
+    <br>
+    <a href="/" class="btn-back">↩️ Coba Lagi</a>
+
+</body>
+</html>
+

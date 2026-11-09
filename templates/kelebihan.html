@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kuis 4 Temperamen - Bagian II</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Tes Kepribadian 4 Temperamen</h1>
+    <p class="subtitle">Personality Plus • Florence Littauer</p>
+
+    <form action="/hitung" method="POST">
+        <input type="hidden" name="nama_user" value="{{ nama_user }}">
+
+    <p>Progress: Bagian 2 dari 2</p>
+    <div class="progress">
+        <div class="progress-bar" style="width:100%"></div>
+    </div>
+    
+        <h3>📝 BAGIAN II: KELEBIHAN</h3>
+        
+        <div class="question">
+            <div class="question-number">No. 21</div>
+            <label><input type="radio" name="k21" value="sanguinis" required> A. Penuh kehidupan, sering menggunakan isyarat tangan, lengan, dan wajah secara hidup.</label>
+            <label><input type="radio" name="k21" value="koleris"> B. Orang yang mau melakukan sesuatu hal yang baru dan berani bertekad untuk menguasainya.</label>
+            <label><input type="radio" name="k21" value="melankolis"> C. Suka menyelidiki bagian-bagian yang logis.</label>
+            <label><input type="radio" name="k21" value="plegmatis"> D. Mudah menyesuaikan diri dan senang dalam setiap situasi.</label>
+
+            <div class="question-number">No. 22</div>
+            <label><input type="radio" name="k22" value="sanguinis" required> A. Penuh kesenangan dan selera humor yang baik.</label>
+            <label><input type="radio" name="k22" value="koleris"> B. Meyakinkan seseorang dengan logika dan fakta, bukan dengan pesona atau kekuasaan.</label>
+            <label><input type="radio" name="k22" value="melankolis"> C. Melakukan sesuatu sampai selesai sebelum memulai yang lain.</label>
+            <label><input type="radio" name="k22" value="plegmatis"> D. Tampak tidak terganggu dan tenang serta menghindari setiap bentuk kekacauan. </label>
+
+            <div class="question-number">No. 23</div>
+            <label><input type="radio" name="k23" value="sanguinis" required> A. Orang yang memandang bersama orang lain sebagai kesempatan untuk bersikap manis dan menghibur, bukannya sebagai tantangan atau kesempatan bisnis.</label>
+            <label><input type="radio" name="k23" value="koleris"> B. Orang yang yakin dengan caranya sendiri.</label>
+            <label><input type="radio" name="k23" value="melankolis"> C. Bersedia mengorbankan dirinya untuk memenuhi kebutuhan orang lain.</label>
+            <label><input type="radio" name="k23" value="plegmatis"> D. Dengan mudah menerima pandangan atau keinginan orang lain tanpa perlu banyak mengungkapkan pendapat sendiri.</label>
+            
+            <div class="question-number">No. 24</div>
+            <label><input type="radio" name="k24" value="sanguinis" required> A. Bisa merebut hati orang lain melalui pesona kepribadian.</label>
+            <label><input type="radio" name="k24" value="koleris"> B. Mengubah setiap situasi, kejadian atau permainan sebagai sebuah kontes dan selalu bermain untuk menang.</label>
+            <label><input type="radio" name="k24" value="melankolis"> C. Menghargai keperluan jlan perasaan orang lain.</label>
+            <label><input type="radio" name="k24" value="plegmatis"> D. Mempunyai perasaan emosional tapi jarang memperlihatkannya. </label>
+
+            <div class="question-number">No. 25</div>
+            <label><input type="radio" name="k25" value="sanguinis" required> A. Memperbaharui dan membantu membuat orang lain merasa senang.</label>
+            <label><input type="radio" name="k25" value="koleris"> B. Bisa bertindak cepat dan efektif dalam semua situasi.</label>
+            <label><input type="radio" name="k25" value="melankolis"> C. Memperlakukan orang lain dengan segan sebagai penghormatan dan penghargaan.</label>
+            <label><input type="radio" name="k25" value="plegmatis"> D. Menahan diri dalam menunjukkan emosi atau antusiasme.</label>
+
+            <div class="question-number">No. 26</div>
+            <label><input type="radio" name="k26" value="sanguinis" required> A. Penuh gairah dalam kehidupan.</label>
+            <label><input type="radio" name="k26" value="koleris"> B. Orang mandiri yang bisa sepenuhnya mengandalkan kemampuan dan sumber dayanya sendiri.</label>
+            <label><input type="radio" name="k26" value="melankolis"> C. Secara intensif memperhatikan orang lain maupun hal apapun yang terjadi di sekitar.</label>
+            <label><input type="radio" name="k26" value="plegmatis"> D. Orang yang mudah menerima keadaan atau situasi apa saja. </label>
+            
+            <div class="question-number">No. 27</div>
+            <label><input type="radio" name="k27" value="sanguinis" required> A. Dapat mendorong atau memaksa orang lain mengikuti dan bergabung melalui pesona kepribadiannya.</label>
+            <label><input type="radio" name="k27" value="koleris"> B. Mengetahui segalanya akan beres bila kita yang memimpin.</label>
+            <label><input type="radio" name="k27" value="melankolis"> C. Memilih mempersiapkan aturan yang terinci sebelumnya dalam menyelesaikan suatu proyek.</label>
+            <label><input type="radio" name="k27" value="plegmatis"> D. Tidak terpengaruh oleh penundaan. Tetap tenang dan toleran.</label>
+            
+            <div class="question-number">No. 28</div>
+            <label><input type="radio" name="k28" value="sanguinis" required> A. Memilih agar semua kehidupan adalah kegiatan yang impulsif, tidak dipikirkan terlebih dahulu dan tidak terhambat oleh rencana.</label>
+            <label><input type="radio" name="k28" value="koleris"> B. Yakin, tidak ragu-ragu.</label>
+            <label><input type="radio" name="k28" value="melankolis"> C. Membuat dan menghayati hidup menurut rencana sehari-hari. Tidak menyukai bila rencananya terganggu.</label>
+            <label><input type="radio" name="k28" value="plegmatis"> D. Pendiam, tidak mudah terseret dalam percakapan.</label>
+
+            <div class="question-number">No. 29</div>
+            <label><input type="radio" name="k29" value="sanguinis" required> A. Bisa menghibur orang lain dan membuat mereka merasa senang.</label>
+            <label><input type="radio" name="k29" value="koleris"> B. Bicara terang-terangan dan terkadang tidak menahan diri.</label>
+            <label><input type="radio" name="k29" value="melankolis"> C. Orang yang mengatur segala-galanya secara sistematis dan metodis.</label>
+            <label><input type="radio" name="k29" value="plegmatis"> D. Bisa menerima apa saja, cepat melakukan sesuatu bahkan dengan cara orang lain.</label>
+
+            <div class="question-number">No. 30</div>
+            <label><input type="radio" name="k30" value="sanguinis" required> A. Punya rasa humor yang cemerlang dan bisa membuat cerita apa saja menjadi peristiwa yang menyenangkan.</label>
+            <label><input type="radio" name="k30" value="koleris"> B. Pribadi yang mendominasi dan mampu menyebabkan orang lain ragu-ragu untuk melawannya.</label>
+            <label><input type="radio" name="k30" value="melankolis"> C. Secara konsisten dapat diandalkan, teguh, setia, dan mengabdi, bahkan terkadang tanpa alasan.</label>
+            <label><input type="radio" name="k30" value="plegmatis"> D. Orang yang menanggapi. Bukan orang yang punya inisiatif untuk memulai percakapan.</label>
+
+            <div class="question-number">No. 31</div>
+            <label><input type="radio" name="k31" value="sanguinis" required> A. Orang yang menyenangkan sebagai teman.</label>
+            <label><input type="radio" name="k31" value="koleris"> B. Bersedia mengambil resiko tanpa kenal takut.</label>
+            <label><input type="radio" name="k31" value="melankolis"> C. Melakukan segala sesuatu secara berurutan dengan ingatan yang jernih akan segala hal yang terjadi.</label>
+            <label><input type="radio" name="k31" value="plegmatis"> D. Berurusan dengan orang lain secara penuh siasat, perasa, dan sabar.</label>
+
+            <div class="question-number">No. 32</div>
+            <label><input type="radio" name="k32" value="sanguinis" required> A. Secara konsisten memiliki semangat yang tinggi dan suka membagikan kebahagiaan kepada orang lain.</label>
+            <label><input type="radio" name="k32" value="koleris"> B. Percaya diri dan yakin akan kemampuan dan kesuksesannya sendiri.</label>
+            <label><input type="radio" name="k32" value="melankolis"> C. Orang yang perhatiannya melibatkan sesuatu yang berhubungan dengan intelektual dan artistik.</label>
+            <label><input type="radio" name="k32" value="plegmatis"> D. Tetap memiliki keseimbangan secara emosional, menanggapi sebagaimana yang diharapkan orang lain.</label>
+
+            <div class="question-number">No. 33</div>
+            <label><input type="radio" name="k33" value="sanguinis" required> A. Mendorong orang lain untuk bekerja dan terlibat serta membuat seluruhnya menyenangkan.</label>
+            <label><input type="radio" name="k33" value="koleris"> B. Memenuhi diri sendiri, mandiri, penuh percaya diri dan nampak tidak begitu memerlukan bantuan.</label>
+            <label><input type="radio" name="k33" value="melankolis"> C. Memvisualisasikan hal-hal dalam bentuk yang sempurna dan perlu memenuhi standar itu sendiri.</label>
+            <label><input type="radio" name="k33" value="plegmatis"> D. Tidak pernah mengatakan atau menyebabkan apapun yang tidak menyenangkan atau menimbulkan rasa keberatan.</label>
+
+            <div class="question-number">No. 34</div>
+            <label><input type="radio" name="k34" value="sanguinis" required> A. Terang-terangan menyatakan emosi terutama rasa sayang dan tidak ragu menyentuh ketika berbicara dengan orang lain.</label>
+            <label><input type="radio" name="k34" value="koleris"> B. Orang yang mempunyai kemampuan membuat penilaian yang cepat dan tuntas.</label>
+            <label><input type="radio" name="k34" value="melankolis"> C. Intensif dan introspektif tanpa rasa senang pada percakapan dan pengajaran yang pulasan.</label>
+            <label><input type="radio" name="k34" value="plegmatis"> D. Memperlihatkan 'kepandaian bicara yang mengigit'. Biasanya kalimat satu baris yang sifatnya sarkastik.</label>  
+
+            <div class="question-number">No. 35</div>
+            <label><input type="radio" name="k35" value="sanguinis" required> A. Menyukai pesta dan tidak bisa menunggu untuk bertemu setiap orang dalam ruangan, tidak pernah menganggap orang lain asing.</label>
+            <label><input type="radio" name="k35" value="koleris"> B. Terdorong oleh keperluan untuk produktif, pemimpin yang dituruti orang lain.</label>
+            <label><input type="radio" name="k35" value="melankolis"> C. Punya apresiasi mendalam untuk musik, punya komitmen kepada musik sebagai bentuk seni, bukan hanya kesenangan pertunjukan.</label>
+            <label><input type="radio" name="k35" value="plegmatis"> D. Secara konsisten mencari peranan merukunkan pertikaian supaya bisa menghindari konflik.</label>   
+
+            <div class="question-number">No. 36</div>
+            <label><input type="radio" name="k36" value="sanguinis" required> A. Terus-menerus berbicara, biasanya menceritakan kisah lucu yang dapat menghibur setiap orang di sekitarnya, merasa perlu mengisi kesunyian agar orang lain merasa senang.</label>
+            <label><input type="radio" name="k36" value="koleris"> B. Memegang teguh dengan keras kepala dan tidak mau melepaskan hingga tujuan tercapai.</label>
+            <label><input type="radio" name="k36" value="melankolis"> C. Orang yang tanggap dan mengingat setiap kesempatan istimewa, cepat memberi isyarat yang baik.</label>
+            <label><input type="radio" name="k36" value="plegmatis"> D. Mudah menerima pemikiran dan cara orang lain tanpa perlu tidak menyetujuinya.</label> 
+
+            <div class="question-number">No. 37</div>
+            <label><input type="radio" name="k37" value="sanguinis" required> A. Penuh kehidupan, kuat, dan penuh semangat.</label>
+            <label><input type="radio" name="k37" value="koleris"> B. Pemberi pengarahan karena pembawaan yang terdorong untuk memimpin dan sering merasa sulit mempercayai bahwa orang lain bisa melakukan pekerjaan dengan sama baiknya.</label>
+            <label><input type="radio" name="k37" value="melankolis"> C. Setia pada seseorang, gagasan, dan pekerjaan, terkadang dapat melampaui alasan.</label>
+            <label><input type="radio" name="k37" value="plegmatis"> D. Selalu bersedia mendengarkan apa yang orang lain katakan.</label>
+
+            <div class="question-number">No. 38</div>
+            <label><input type="radio" name="k38" value="sanguinis" required> A. Tak ternilai harganya, dicintai, pusat perhatian.</label>
+            <label><input type="radio" name="k38" value="koleris"> B. Memegang kepemimpinan dan mengharapkan orang lain mengikuti.</label>
+            <label><input type="radio" name="k38" value="melankolis"> C. Mengatur kehidupan, tugas, dan pemecahan masalah dengan membuat daftar.</label>
+            <label><input type="radio" name="k38" value="plegmatis"> D. Mudah puas dengan apa yang dimiliki, jarang iri hati.</label>
+
+            <div class="question-number">No. 39</div>
+            <label><input type="radio" name="k39" value="sanguinis" required> A. Orang yang suka menghidupkan pesta sebagai diinginkan orang sebagai tamu pesta.</label>
+            <label><input type="radio" name="k39" value="koleris"> B. Harus terus-menerus       bekerja atau mencapai sesuátu, sering merasa sulit beristirahat.</label>                    
+            <label><input type="radio" name="k39" value="melankolis"> C. Menempatkan standar tinggi pada dirinya maupun orang lain. Menginginkan segala-galanya pada urutan semestinya sepanjang waktu.</label>
+            <label><input type="radio" name="k39" value="plegmatis"> D. Mudah bergaul, bersifat terbuka, mudah diajak bicara.</label>
+
+            <div class="question-number">No. 40</div>
+            <label><input type="radio" name="k40" value="sanguinis" required> A. Kepribadian yang hidup, berlebihan, penuh tenaga.</label> 
+            <label><input type="radio" name="k40" value="koleris"> B. Tidak kenal takut, beranı, terus terang, tıdak takut akan resiko.</label> 
+            <label><input type="radio" name="k40" value="melankolis"> C. Secara konsisten ingin membawa diri di dalam batas-batas apa yang dirasakan semestinya.</label>
+            <label><input type="radio" name="k40" value="plegmatis"> D. Kepribadian yang stabil dan berada di tengah-tengah.</label>
+        
+        </div>
+
+        <button type="submit">Lihat Hasil Kepribadian 🚀</button>
+    </form>
+</body>
+</html>

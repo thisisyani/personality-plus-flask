@@ -1,0 +1,217 @@
+/* Mengatur font dan background seluruh halaman web */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Kotak utama kuis ditengah */
+h1 {
+margin-bottom: 0;
+color: #2d3748;
+font-size: 2.7rem;
+font-weight: 700;
+text-align: center;
+}
+ 
+.subtitle {
+margin-top: 5px;
+margin-bottom: 30px;
+letter-spacing: 4px;
+font-size: 1rem;
+font-weight: 600;
+color: #718096;
+text-align: center;
+}
+
+.intro {
+background: #f8fafc;
+border-left: 5px solid #667eea;
+padding: 15px 20px;
+border-radius: 10px;
+margin: 25px 0;
+color: #4a5568;
+}
+ 
+.intro p {
+margin: 0;
+line-height: 1.6;
+}
+
+h2 {
+    margin-top: 5px;
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 30px;
+}
+h3 {
+margin-top: 30px;
+padding-bottom: 10px;
+border-bottom: 2px solid #e2e8f0;
+color: #2d3748;
+font-size: 1.4rem;
+}
+
+form, .result-container {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    max-width: 850px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Input text nama */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+/* Pilihan radio button */
+input[type="radio"] {
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+.question label {
+display: block;
+padding: 12px;
+margin: 8px 0;
+border: 1px solid #e2e8f0;
+border-radius: 8px;
+cursor: pointer;
+}
+
+.question label:hover {
+    background: #f8faff;
+    border-color: #667eea;
+    transform: translateX(3px);
+}
+
+.question-number {
+display: inline-block;
+background: #667eea;
+color: white;
+padding: 6px 12px;
+border-radius: 20px;
+font-weight: 600;
+margin-bottom: 10px;
+}
+
+/* Button Submit */
+button, .btn-back {
+    display: inline-block;
+    width: auto;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.1s, opacity 0.2s;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover, .btn-back:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Tampilan skor */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 250px; /* Batasan lebar agar di tengah */
+    margin: 20px auto; 
+    text-align: left; 
+}
+
+/* Baris temperamen */
+li {
+    background: #f7fafc;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    border-left: 4px solid #764ba2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+
+/* Efek interaktif: baris pilihan jawaban dilewati kursor, warna berubah */
+form p + input[type="radio"] + text, 
+form input[type="radio"] {
+    transition: all 0.2s ease;
+}
+
+/* Jarak antar nomor kuis */
+form p {
+    margin-top: 25px;
+    color: #2d3748;
+    font-size: 16px;
+}
+
+/* Efek transisi tombol saat diarahkan kursor */
+button, .btn-back {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+button:hover {
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4); 
+    letter-spacing: 0.5px; /* Teks tombol agak merenggang sedikit pas di-hover */
+}
+
+.progress {
+height: 8px;
+background: #e2e8f0;
+border-radius: 999px;
+}
+ 
+.progress-bar {
+width: 50%;
+height: 100%;
+background: linear-gradient(
+90deg,
+#667eea,
+#764ba2
+);
+border-radius: 999px;
+}
+
+.deskripsi {
+    margin-bottom: 20px;
+}
+
+li span:last-child {
+    font-weight: bold;
+}
