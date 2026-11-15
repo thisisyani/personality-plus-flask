@@ -93,11 +93,18 @@ class EvaluatorKombinasi(EvaluatorKuis):
             return self.penjelasan_tipe.get( tipe_tunggal, {"deskripsi": "-", "kekuatan": "-","tantangan": "-"})                                               
 
 # --- ALUR FLASK WEB ---
+# 1. Landing Page  
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# 1. Halaman Pertama (Kelemahan) 
+# 2. Terima nama dari Landing Page ➡️ Tampilkan Part I Kelemahan
+@app.route('/kelemahan', methods=['POST'])
+def kelemahan():
+    nama = request.form.get('nama_user')
+    return render_template('kelemahan.html', nama_user=nama)
+
+# 3. Tangkap jawaban kelemahan ➡️ Tampilkan Page Kelebihan
 @app.route('/kelebihan', methods=['POST'])
 def kelebihan():
     nama = request.form.get('nama_user')
@@ -107,7 +114,7 @@ def kelebihan():
     
     return render_template('kelebihan.html', nama_user=nama)
 
-# 2. Halaman Kedua (Kelebihan) 
+# 4. Gabungan semua jawaban dan menghitung via Class OOP
 @app.route('/hitung', methods=['POST'])
 def hitung():
     nama = request.form.get('nama_user')
@@ -121,17 +128,17 @@ def hitung():
     
     skor_akhir = kalkulator.hitung_total_skor()
     hasil_dominan = kalkulator.dapatkan_temperamen_dominan()
-    
     deskripsi = kalkulator.dapatkan_deskripsi(hasil_dominan)
-    print(deskripsi)
+    
     return render_template('result.html', 
                            nama_user=nama, 
                            hasil=hasil_dominan, 
                            detail_skor=skor_akhir,
                            deskripsi=deskripsi['deskripsi'],
-                           kekuatan=deskripsi['kekuatan'],    # Dikirim ke HTML
-                           tantangan=deskripsi['tantangan'])  # Dikirim ke HTML
+                           kekuatan=deskripsi['kekuatan'],    
+                           tantangan=deskripsi['tantangan'])  
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+

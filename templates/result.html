@@ -2,37 +2,106 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Hasil Kepribadian Kamu</title>
+    <title>Your Personality Result</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Halo {{ nama_user }}. Ini Hasil Tesmu!</h1>
+    <h1>Hello {{ nama_user }}. Here is Your Result!</h1>
+    <h2 style="color: #51627c; font-weight: 500; margin-top: 5px;">
+    Tipe Temperamen Dominan: <b style="color: #6b46c1; font-weight: 700;">{{ hasil }}</b>
+</h2>
 
-    <h2>Tipe Temperamen Dominan: <b>{{hasil}}</b></h2>
+<!-- Pembungkus Utama 2 Kolom -->
+<div class="dashboard-grid">
     
-    <p>Rincian jumlah kecenderungan kata yang kamu pilih:</p>
+    <!-- KOLOM KIRI: Skor & Donat -->
+    <div class="left-panel">
+        <p><b>Your Score Breakdown:</b></p>
+        <ul>
+            <li><span>🟡 Sanguinis:</span> <b>{{ detail_skor['sanguinis'] }}</b></li>
+            <li><span>🔴 Koleris:</span> <b>{{ detail_skor['koleris'] }}</b></li>
+            <li><span>🔵 Melankolis:</span> <b>{{ detail_skor['melankolis'] }}</b></li>
+            <li><span>🟢 Plegmatis:</span> <b>{{ detail_skor['plegmatis'] }}</b></li>
+        </ul>
 
-    <ul>
-        <li><span>🟡 Sanguinis:</span> <b>{{ detail_skor['sanguinis'] }}</b></li>
-        <li><span>🔴 Koleris:</span> <b>{{ detail_skor['koleris'] }}</b></li>
-        <li><span>🔵 Melankolis:</span> <b>{{ detail_skor['melankolis'] }}</b></li>
-        <li><span>🟢 Plegmatis:</span> <b>{{ detail_skor['plegmatis'] }}</b></li>
-    </ul>
-
-    <div class="description-box" style="margin-top: 25px; padding: 20px; background-color: #f0f4f8; border-radius: 12px; border-left: 5px solid #667eea; text-align: left;">
-        <h3 style="margin-top: 0; color: #030b13;">🧠 Tentang Dirimu:</h3>
-        <p class="deskripsi">{{ deskripsi }}</p>
-
-        <h3 style="margin-top: 0; color: #2b6cb0;">🌟 Kekuatan Karaktermu:</h3>
-        <p>{{ kekuatan }}</p>
-        
-        <h3 style="color: #c53030; margin-top: 20px;">🚨 Tantangan/Kelemahanmu:</h3>
-        <p>{{ tantangan }}</p>
+        <div id="wadahGrafik" 
+             data-sanguinis="{{ detail_skor['sanguinis'] }}"
+             data-koleris="{{ detail_skor['koleris'] }}"
+             data-melankolis="{{ detail_skor['melankolis'] }}"
+             data-plegmatis="{{ detail_skor['plegmatis'] }}"
+             style="max-width: 265px; margin: 15px auto;">
+            <canvas id="grafikTemperamen"></canvas>
+        </div>
     </div>
 
+    <!-- KOLOM KANAN: Penjelasan Karakter -->
+    <div class="right-panel">
+        <div class="description-box" style="padding: 25px; background-color: #f0f4f8; border-radius: 12px; border-left: 5px solid #667eea; text-align: left; height: 100%; box-sizing: border-box;">
+            <h3 style="margin-top: 0; color: #030b13;">🧠 About You:</h3>
+            <p class="deskripsi">{{ deskripsi }}</p>
+            
+            <h3 style="margin-top: 20px; color: #2b6cb0;">🌟 Your Strengths:</h3>
+            <p>{{ kekuatan }}</p>
+            
+            <h3 style="color: #c53030; margin-top: 20px;">🚨 Your Challenges:</h3>
+            <p>{{ tantangan }}</p>
+        </div>
+    </div>
+
+</div>
+
+    <!-- Tombol Share ke WhatsApp -->
+    <button onclick="bagikanKeWA()" style="background: #25D366; margin-bottom: 10px;">💬 Share to WhatsApp</button>
     <br>
-    <a href="/" class="btn-back">↩️ Coba Lagi</a>
+    <a href="/" class="btn-back">↩️ Retake Test</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const wadah = document.getElementById('wadahGrafik');
+        
+        // Bungkus dengan Number() agar terbaca sebagai angka murni oleh Chart.js
+        const skorSanguinis = Number(wadah.getAttribute('data-sanguinis'));
+        const skorKoleris = Number(wadah.getAttribute('data-koleris'));
+        const skorMelankolis = Number(wadah.getAttribute('data-melankolis'));
+        const skorPlegmatis = Number(wadah.getAttribute('data-plegmatis'));
+
+        const ctx = document.getElementById('grafikTemperamen');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Sanguinis', 'Koleris', 'Melankolis', 'Plegmatis'],
+                datasets: [{
+                    data: [skorSanguinis, skorKoleris, skorMelankolis, skorPlegmatis],
+                    backgroundColor: ['#F6E05E', '#F56565', '#4299E1', '#48BB78'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        function bagikanKeWA() {
+            const nama = "{{ nama_user }}";
+            const tipe = "{{ hasil }}";
+            const linkWeb = window.location.origin;
+                
+            const teksPesan = 
+            `Hai! Aku ${nama} baru aja ikutan tes Personality Plus.
+            Tipe Temperamenku adalah *${tipe}*! 
+            Penasaran tipe kepribadianmu? Coba tesnya di sini: ${linkWeb}`;
+            const urlWA =`https://wa.me/?text=${encodeURIComponent(teksPesan)}`;
+
+            window.open(urlWA, '_blank');
+        }
+    </script>
 
 </body>
 </html>
+
+
 

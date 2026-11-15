@@ -1,10 +1,12 @@
-/* Mengatur font dan background seluruh halaman web */
+/* Font dan background seluruh halaman web */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: #333;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 40px 20px;
     min-height: 100vh;
@@ -167,8 +169,7 @@ li {
     box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
-
-/* Efek interaktif: baris pilihan jawaban dilewati kursor, warna berubah */
+/* Interaktif: baris pilihan jawaban dilewati kursor, warna berubah */
 form p + input[type="radio"] + text, 
 form input[type="radio"] {
     transition: all 0.2s ease;
@@ -214,4 +215,33 @@ border-radius: 999px;
 
 li span:last-child {
     font-weight: bold;
+}
+
+/* Tata letak kanan-kiri (2 Kolom) */
+.dashboard-grid {
+    display: flex;
+    gap: 30px; /* Jarak antar kolom kiri dan kanan */
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto;
+    align-items: stretch; /* Tinggi kolom kiri & kanan sejajar */
+}
+
+.left-panel {
+    flex: 1; /* Porsi lebar sekitar 40% */
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+
+.right-panel {
+    flex: 1.5; 
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        flex-direction: column;
+    }
 }
